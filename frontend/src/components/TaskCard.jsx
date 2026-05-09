@@ -17,19 +17,31 @@ function TaskCard({
       </p>
 
       <p className="mb-2">
-        Status: {task.status}
+        <span className="font-semibold">
+          Status:
+        </span>{" "}
+        {task.status}
       </p>
 
       <p className="mb-2">
-        Priority: {task.priority}
+        <span className="font-semibold">
+          Priority:
+        </span>{" "}
+        {task.priority}
       </p>
 
       <p className="mb-2">
-        Assigned To: {task.assignedTo}
+        <span className="font-semibold">
+          Assigned To:
+        </span>{" "}
+        {task.assignedTo}
       </p>
 
       <p className="mb-2">
-        Due Date: {task.dueDate}
+        <span className="font-semibold">
+          Due Date:
+        </span>{" "}
+        {task.dueDate}
       </p>
 
       <div className="flex gap-3 mt-4">
