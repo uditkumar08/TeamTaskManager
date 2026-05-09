@@ -42,27 +42,25 @@ function Tasks() {
 
     try {
 
-      const token = localStorage.getItem("token")
-
       await API.post(
         "/tasks",
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
+        formData
       )
 
-      alert("Task Created")
-
       fetchTasks()
+
+      setFormData({
+        title: "",
+        description: "",
+        status: "Todo",
+        priority: "Medium",
+        dueDate: "",
+        assignedTo: ""
+      })
 
     } catch (err) {
 
       console.log(err)
-
-      alert("Error creating task")
     }
   }
 
@@ -117,6 +115,7 @@ function Tasks() {
 
           <input
             placeholder="Title"
+            value={formData.title}
             className="border p-3 rounded-lg"
             onChange={(e) =>
               setFormData({
@@ -128,6 +127,7 @@ function Tasks() {
 
           <input
             placeholder="Assigned To"
+            value={formData.assignedTo}
             className="border p-3 rounded-lg"
             onChange={(e) =>
               setFormData({
@@ -139,6 +139,7 @@ function Tasks() {
 
           <input
             placeholder="Description"
+            value={formData.description}
             className="border p-3 rounded-lg"
             onChange={(e) =>
               setFormData({
@@ -150,6 +151,7 @@ function Tasks() {
 
           <input
             type="date"
+            value={formData.dueDate}
             className="border p-3 rounded-lg"
             onChange={(e) =>
               setFormData({
@@ -160,6 +162,7 @@ function Tasks() {
           />
 
           <select
+            value={formData.priority}
             className="border p-3 rounded-lg"
             onChange={(e) =>
               setFormData({
@@ -174,6 +177,7 @@ function Tasks() {
           </select>
 
           <select
+            value={formData.status}
             className="border p-3 rounded-lg"
             onChange={(e) =>
               setFormData({
