@@ -4,7 +4,7 @@ A full-stack team collaboration application for managing projects and tasks effi
 
 ## 🚀 Live Deployments
 
-- **Frontend**: https://task-manager-eighti.vercel.app/
+- **Frontend**: https://teamttaskmanager.vercel.app/
 - **Backend API**: https://teamtaskmanager-production-8803.up.railway.app/
 - **API Docs**: https://teamtaskmanager-production-8803.up.railway.app/docs
 
@@ -79,7 +79,7 @@ TeamTaskManager/
    ```
 
 4. **Access the application**
-   - Frontend: https://task-manager-eighti.vercel.app/
+   - Frontend: https://teamttaskmanager.vercel.app/
    - Backend API: https://teamtaskmanager-production-8803.up.railway.app/
    - API Docs: https://teamtaskmanager-production-8803.up.railway.app/docs
 
