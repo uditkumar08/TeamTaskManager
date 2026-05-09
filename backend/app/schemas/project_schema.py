@@ -1,8 +1,9 @@
 from pydantic import BaseModel
+from typing import List
 
 
-class ProjectSchema(BaseModel):
+class ProjectCreate(BaseModel):
 
     title: str
     description: str
-    members: list[str]
+    members: List[str]
