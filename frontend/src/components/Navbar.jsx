@@ -4,6 +4,8 @@ function Navbar() {
 
   const navigate = useNavigate()
 
+  const role = localStorage.getItem("role")
+
   const logout = () => {
 
     localStorage.removeItem("token")
@@ -22,9 +24,15 @@ function Navbar() {
 
       <div className="flex items-center gap-4">
 
-        <p className="text-gray-600 capitalize">
-          {localStorage.getItem("role")}
-        </p>
+        <div
+          className={`px-4 py-2 rounded-lg font-medium text-white capitalize
+          ${role === "admin"
+            ? "bg-green-500"
+            : "bg-blue-500"
+          }`}
+        >
+          {role}
+        </div>
 
         <button
           onClick={logout}
