@@ -24,7 +24,7 @@ function Projects() {
 
     try {
 
-      const res = await API.get("/projects")
+      const res = await API.get("/projects/")
 
       setProjects(res.data)
 
@@ -39,7 +39,7 @@ function Projects() {
     try {
 
       await API.post(
-        "/projects",
+        "/projects/",
         formData
       )
 
