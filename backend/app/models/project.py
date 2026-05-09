@@ -1,9 +1,8 @@
-from sqlalchemy import Column, Integer, String
-from app.database import Base
+from pydantic import BaseModel
+from typing import List
 
-class Project(Base):
-    __tablename__ = "projects"
+class ProjectCreate(BaseModel):
 
-    id = Column(Integer, primary_key=True, index=True)
-    title = Column(String)
-    description = Column(String)
+    title: str
+    description: str
+    members: List[str]
