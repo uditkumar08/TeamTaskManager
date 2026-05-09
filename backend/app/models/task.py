@@ -1,11 +1,10 @@
-from sqlalchemy import Column, Integer, String
-from app.database import Base
+from pydantic import BaseModel
 
-class Task(Base):
-    __tablename__ = "tasks"
+class TaskCreate(BaseModel):
 
-    id = Column(Integer, primary_key=True, index=True)
-    title = Column(String)
-    description = Column(String)
-    status = Column(String, default="Todo")
-    priority = Column(String)
+    title: str
+    description: str
+    status: str
+    priority: str
+    dueDate: str
+    assignedTo: str
