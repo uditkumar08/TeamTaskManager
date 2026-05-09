@@ -11,7 +11,7 @@ from app.database import (
 )
 
 from app.schemas.project_schema import (
-    ProjectSchema
+    ProjectCreate
 )
 
 from app.utils.jwt_handler import (
@@ -23,7 +23,7 @@ router = APIRouter(prefix="/projects")
 
 @router.post("/")
 def create_project(
-    project: ProjectSchema,
+    project: ProjectCreate,
     authorization: str = Header(None)
 ):
 
