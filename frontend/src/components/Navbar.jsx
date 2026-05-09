@@ -20,12 +20,20 @@ function Navbar() {
         Team Task Manager
       </h1>
 
-      <button
-        onClick={logout}
-        className="bg-red-500 text-white px-5 py-2 rounded-lg"
-      >
-        Logout
-      </button>
+      <div className="flex items-center gap-4">
+
+        <p className="text-gray-600 capitalize">
+          {localStorage.getItem("role")}
+        </p>
+
+        <button
+          onClick={logout}
+          className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg"
+        >
+          Logout
+        </button>
+
+      </div>
 
     </div>
   )
