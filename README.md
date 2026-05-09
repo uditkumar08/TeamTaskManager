@@ -99,7 +99,7 @@ TeamTaskManager/
 - **Team Chat**: Real-time messaging within projects
 - **Time Tracking**: Log time spent on tasks
 - **Advanced Reporting**: Analytics and insights on team productivity
-- **Mobile App**: Native mobile applications for iOS and Android
+- **AI**: Going to implement GenAI concept RAG And analytics view.
 
 ## 🛠️ Tech Stack
 
