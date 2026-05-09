@@ -6,7 +6,13 @@ import Layout from "../components/Layout"
 
 function Dashboard() {
 
-  const [data, setData] = useState({})
+  const [data, setData] = useState({
+    total_tasks: 0,
+    completed_tasks: 0,
+    pending_tasks: 0,
+    in_progress_tasks: 0,
+    overdue_tasks: 0
+  })
 
   useEffect(() => {
 
