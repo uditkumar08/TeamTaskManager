@@ -2,6 +2,11 @@ from fastapi import APIRouter, HTTPException
 
 from app.database import users_collection
 
+from app.schemas.user_schema import (
+    UserSignup,
+    UserLogin
+)
+
 from app.utils.password_handler import (
     hash_password,
     verify_password
@@ -15,27 +20,28 @@ router = APIRouter(prefix="/auth")
 
 
 @router.post("/signup")
-def signup(user: dict):
+def signup(user: UserSignup):
 
     existing_user = users_collection.find_one({
-        "email": user["email"]
+        "email": user.email
     })
 
     if existing_user:
+
         raise HTTPException(
             status_code=400,
             detail="Email already exists"
         )
 
     hashed_password = hash_password(
-        user["password"]
+        user.password
     )
 
     new_user = {
-        "name": user["name"],
-        "email": user["email"],
+        "name": user.name,
+        "email": user.email,
         "password": hashed_password,
-        "role": user.get("role", "member")
+        "role": user.role
     }
 
     users_collection.insert_one(new_user)
@@ -46,29 +52,32 @@ def signup(user: dict):
 
 
 @router.post("/login")
-def login(user: dict):
+def login(user: UserLogin):
 
     db_user = users_collection.find_one({
-        "email": user["email"]
+        "email": user.email
     })
 
     if not db_user:
+
         raise HTTPException(
             status_code=400,
             detail="Invalid email"
         )
 
     if not verify_password(
-        user["password"],
+        user.password,
         db_user["password"]
     ):
+
         raise HTTPException(
             status_code=400,
             detail="Invalid password"
         )
 
     token = create_access_token({
-        "sub": db_user["email"]
+        "sub": db_user["email"],
+        "role": db_user["role"]
     })
 
     return {
