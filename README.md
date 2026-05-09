@@ -83,7 +83,7 @@ TeamTaskManager/
    - Backend API: https://teamtaskmanager-production-8803.up.railway.app/
    - API Docs: https://teamtaskmanager-production-8803.up.railway.app/docs
 
-## 🌟 Features
+## 🌟 App Features
 
 - **User Authentication**: Secure login and registration
 - **Project Management**: Create and manage team projects
@@ -91,6 +91,15 @@ TeamTaskManager/
 - **Dashboard**: Overview of all projects and tasks
 - **Responsive Design**: Works on all devices
 - **Real-time Updates**: Live synchronization of changes
+
+## 🚀 Future Features
+
+- **Notifications**: Email and in-app notifications for task updates
+- **File Attachments**: Upload and share files with tasks
+- **Team Chat**: Real-time messaging within projects
+- **Time Tracking**: Log time spent on tasks
+- **Advanced Reporting**: Analytics and insights on team productivity
+- **Mobile App**: Native mobile applications for iOS and Android
 
 ## 🛠️ Tech Stack
 
