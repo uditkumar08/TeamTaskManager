@@ -4,7 +4,10 @@ function Sidebar() {
 
   const navigate = useNavigate()
 
-  const handleLogout = () => {
+  const role = localStorage.getItem("role")
+  const token = localStorage.getItem("token")
+
+  const logout = () => {
 
     localStorage.removeItem("token")
     localStorage.removeItem("role")
@@ -49,12 +52,37 @@ function Sidebar() {
 
       </div>
 
-      <button
-        onClick={handleLogout}
-        className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg"
-      >
-        Logout
-      </button>
+      {
+        token && (
+
+          <div className="border-t border-gray-700 pt-5">
+
+            <p className="text-sm text-gray-400">
+              Logged in as
+            </p>
+
+            <div className="mt-2">
+
+              <p className="font-semibold text-lg">
+                User
+              </p>
+
+              <div
+                className={
+                  role === "admin"
+                    ? "bg-green-500 inline-block px-3 py-1 rounded-lg mt-2 capitalize"
+                    : "bg-blue-500 inline-block px-3 py-1 rounded-lg mt-2 capitalize"
+                }
+              >
+                {role}
+              </div>
+
+            </div>
+
+          </div>
+
+        )
+      }
 
     </div>
   )
