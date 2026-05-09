@@ -23,15 +23,11 @@ function Signup() {
         formData
       )
 
-      alert("Signup Successful")
-
       navigate("/")
 
     } catch (err) {
 
       console.log(err)
-
-      alert("Signup Failed")
     }
   }
 
@@ -47,6 +43,7 @@ function Signup() {
 
         <input
           placeholder="Name"
+          value={formData.name}
           className="w-full border p-3 rounded-lg mb-4"
           onChange={(e) =>
             setFormData({
@@ -58,6 +55,7 @@ function Signup() {
 
         <input
           placeholder="Email"
+          value={formData.email}
           className="w-full border p-3 rounded-lg mb-4"
           onChange={(e) =>
             setFormData({
@@ -70,6 +68,7 @@ function Signup() {
         <input
           type="password"
           placeholder="Password"
+          value={formData.password}
           className="w-full border p-3 rounded-lg mb-4"
           onChange={(e) =>
             setFormData({
@@ -80,6 +79,7 @@ function Signup() {
         />
 
         <select
+          value={formData.role}
           className="w-full border p-3 rounded-lg mb-4"
           onChange={(e) =>
             setFormData({
