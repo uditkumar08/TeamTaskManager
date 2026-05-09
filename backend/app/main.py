@@ -13,7 +13,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://task-manager-eighti.vercel.app"
+        "https://teamttaskmanager.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
