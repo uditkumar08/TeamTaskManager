@@ -38,27 +38,22 @@ function Projects() {
 
     try {
 
-      const token = localStorage.getItem("token")
-
       await API.post(
         "/projects",
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
+        formData
       )
 
-      alert("Project Created")
-
       fetchProjects()
+
+      setFormData({
+        title: "",
+        description: "",
+        members: []
+      })
 
     } catch (err) {
 
       console.log(err)
-
-      alert("Only admin can create project")
     }
   }
 
@@ -80,6 +75,7 @@ function Projects() {
 
           <input
             placeholder="Project Title"
+            value={formData.title}
             className="border p-3 rounded-lg"
             onChange={(e) =>
               setFormData({
@@ -102,6 +98,7 @@ function Projects() {
 
           <textarea
             placeholder="Description"
+            value={formData.description}
             className="border p-3 rounded-lg col-span-2"
             onChange={(e) =>
               setFormData({
@@ -121,6 +118,15 @@ function Projects() {
         </button>
 
       </div>
+
+      {
+        projects.length === 0 &&
+        (
+          <p className="text-gray-500">
+            No projects available
+          </p>
+        )
+      }
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
