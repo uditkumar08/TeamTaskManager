@@ -24,15 +24,19 @@ function Navbar() {
 
       <div className="flex items-center gap-4">
 
-        <div
-          className={`px-4 py-2 rounded-lg font-medium text-white capitalize
-          ${role === "admin"
-            ? "bg-green-500"
-            : "bg-blue-500"
-          }`}
-        >
-          {role}
-        </div>
+        {
+          role === "admin"
+            ? (
+              <div className="bg-green-500 text-white px-4 py-2 rounded-lg font-medium capitalize">
+                {role}
+              </div>
+            )
+            : (
+              <div className="bg-blue-500 text-white px-4 py-2 rounded-lg font-medium capitalize">
+                {role}
+              </div>
+            )
+        }
 
         <button
           onClick={logout}
