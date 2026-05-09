@@ -32,15 +32,11 @@ function Login() {
         res.data.role
       )
 
-      alert("Login Successful")
-
       navigate("/dashboard")
 
     } catch (err) {
 
       console.log(err)
-
-      alert("Invalid Credentials")
     }
   }
 
@@ -57,6 +53,7 @@ function Login() {
         <input
           type="email"
           placeholder="Email"
+          value={email}
           className="w-full border p-3 rounded-lg mb-4"
           onChange={(e) =>
             setEmail(e.target.value)
@@ -66,6 +63,7 @@ function Login() {
         <input
           type="password"
           placeholder="Password"
+          value={password}
           className="w-full border p-3 rounded-lg mb-4"
           onChange={(e) =>
             setPassword(e.target.value)
