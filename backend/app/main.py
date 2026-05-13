@@ -13,7 +13,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://teamttaskmanager.vercel.app"
+        "http://localhost:5173",
+        "https://teamttaskmanager.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
